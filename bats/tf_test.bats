@@ -15,3 +15,8 @@ CHECK_FILES=("backend.tf"
   result="$(ls ./good_example/*.tf | wc -l)"
   [ "$result" -gt "${#CHECK_FILES[@]}"  ]
 }
+
+@test "a quick test" {
+  run bash -c "ls ./good_example/*.tf | wc -l"
+  [ "$output" -gt "${#CHECK_FILES[@]}" ]
+}
